@@ -3,38 +3,36 @@
 
 '''
 EXAMPLES OF TEST RUNS (ALL TYPES OF HANDS):
-
-#general test cases left, 
-
+ 
 TdJdQdKdAd
-Royal Flush <--
+Royal Flush 
 
 3d4d5d6d7d     
-Straight FLush  <-
+Straight Flush  
 
-TcTsThTd2s
+TcTsThTd2s,     
 Four of a Kind
 
-3d3s3c8s8c
+3d3s3c8s8c,     
 Full House
 
-2s4s6sTsQs
+2s4s6sTsQs,     
 Flush    
 
-3s4d5s6h7c
+3s4d5s6h7c  
 Straight    
 
-Ah6c6s3c6h
+Ah6c6s3c6h,     
 Three of a Kind    
 
 4s8d8hJcJs
 Two Pair    
 
-7h7h6s9h3c
+7h7h6s9h3c,    
 Pair    
 
-4sJh7dKc9s
-K high    
+4sJh7dKc9s,     
+K high,         
 '''
 
 import random 
@@ -140,27 +138,18 @@ def evaluate(hand):
                 if i.isdigit() and int(i) >= 2 and int(i) <= 9: #type(int(i)) == int
                     new.append(int(i))
                 else:
-                    case = {
-                        i == 'T' : new.append(10),
-                        i == 'J' : new.append(11),
-                        i == 'Q' : new.append(12),
-                        i == 'K' : new.append(13),
-                        i == 'A' : new.append(1),
-                    }
-                    case[i]()
+                    if i == 'T' : new.append(10),
+                    elif i == 'J' : new.append(11),
+                    elif i == 'Q' : new.append(12),
+                    elif i == 'K' : new.append(13),
+                    elif i == 'A' : new.append(1),
+                    
         new.sort()
         newStrt = list(range(min(new), max(new)+1))
                     
         if new == newStrt:
             handType = 'Straight'
             return handType  #this hand is a straight
-
-    #7 - THREE OF 
-#    elif (hand.count(hand[0]) == 3 or hand.count(hand[2]) == 3 or hand.count(hand[4]) == 3 or hand.count(hand[6]) >= 3 or hand.count(hand[8]) >= 3):
-#        for i in hand:
-#            hand.count(i) == 3 #if there is exactly three cards with the same rank
-#            handType = 'Three of a Kind' #this hand is a three of a kind
-#           return handType
 
     #9 - PAIR (One pair of cards with the same rank)
     elif (hand.count(hand[0]) == 2 or hand.count(hand[2]) == 2 or hand.count(hand[4]) == 2 or hand.count(hand[6]) == 2 or hand.count(hand[8]) == 2):
@@ -193,14 +182,3 @@ print(evaluate(hand), '\n')
 
 print(randomHand) # EXAMPLE RUN - generates any hand to work in all 6 cases
 print(evaluate(randomHand)) #evaluates a randomly generated poker hand
-
-#            if newStrt[i] == 1 or newStrt[i] >= 10 and newStrt[i] <= 13:
-#                for i, rank in enumerate(newStrt):
-#                    case = {
-#                        rank == 10 : newStrt[i] == 'T',
-#                        rank == 11 : newStrt[i] == 'J',
-#                        rank == 12 : newStrt[i] == 'Q',
-#                        rank == 13 : newStrt[i] == 'K',
-#                        rank == 1 : newStrt[i] == 'A',
-#                        rank >= 2 and rank <=9 : newStrt[i] == rank,
-#                    }
