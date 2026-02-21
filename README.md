@@ -1,6 +1,6 @@
 # Poker
 
-This project, developed in Python, evaluates poker hands using a string of characters representing card values and suits. It then states the type of hand it is: straight flush, four of a kind, full house, flush, straight, three of a kind, two pair, pair, or high card.
+This project, developed in Python, evaluates poker hands using a string of characters representing card values ("23456789TJQKA") and suits ("cdhs"). It then states the type of hand it is: straight flush, four of a kind, full house, flush, straight, three of a kind, two pair, pair, or high card.
 
  Here are some examples of the hands assessed:
 
